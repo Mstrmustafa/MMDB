@@ -1,0 +1,356 @@
+/* Container for the movies */
+.moviescontainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    width: 97%;
+}
+
+/* Heading for the movies section */
+.moviescontainer h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+@media (max-width: 800px) {
+    .moviescontainer h2 {
+        font-size: 30px;  /* Smaller heading on medium screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .moviescontainer h2 {
+        font-size: 24px;  /* Even smaller heading on small screens */
+    }
+}
+
+/* Grid layout for the movie items */
+.movieslist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .movieslist {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));  /* Smaller items on smaller screens */
+        gap: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .movieslist {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));  /* Even smaller items on very small screens */
+        gap: 10px;
+    }
+}
+
+/* Individual movie item */
+.movie-item {
+    background-color: #222222;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .movie-item {
+        padding: 8px;  /* Smaller padding on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .movie-item {
+        padding: 6px;  /* Even smaller padding on very small screens */
+    }
+}
+
+/* Movie image styling */
+.movie-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .movie-item img {
+        margin-bottom: 8px;  /* Smaller margin on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .movie-item img {
+        margin-bottom: 6px;  /* Even smaller margin on very small screens */
+    }
+}
+
+/* Movie title */
+.movie-item p:first-of-type {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffdd57;
+}
+
+@media (max-width: 600px) {
+    .movie-item p:first-of-type {
+        font-size: 14px;  /* Smaller font size on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .movie-item p:first-of-type {
+        font-size: 12px;  /* Even smaller font size on very small screens */
+    }
+}
+
+/* Release date styling */
+.movie-item p:nth-of-type(2) {
+    font-size: 14px;
+    color: #ccc;
+}
+
+@media (max-width: 600px) {
+    .movie-item p:nth-of-type(2) {
+        font-size: 12px;  /* Smaller font size on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .movie-item p:nth-of-type(2) {
+        font-size: 10px;  /* Even smaller font size on very small screens */
+    }
+}
+
+/* Circle rating styling */
+.circlerating {
+    margin: 10px auto;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+@media (max-width: 600px) {
+    .circlerating {
+        width: 60px;
+        height: 60px;  /* Smaller rating circle on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .circlerating {
+        width: 50px;
+        height: 50px;  /* Even smaller rating circle on very small screens */
+    }
+}
+
+.progresscircle {
+    width: 90%;
+    height: 90%;
+}
+
+.circlebg {
+    fill: none;
+    stroke: #444;
+    stroke-width: 2.8;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke: #ffcc00;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.5s ease;
+}
+
+.percentage {
+    fill: #ffe66d;
+    font-size: 0.5em;
+    text-anchor: middle;
+    font-weight: bold;
+    transform: translateY(0.25em);
+}
+
+/* Heart icon styling */
+.hearticon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .hearticon {
+        font-size: 20px;  /* Smaller icon on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .hearticon {
+        font-size: 16px;  /* Even smaller icon on very small screens */
+    }
+}
+
+/* See More button styling */
+.seemorebutton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #222222;
+    font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: center;
+}
+
+@media (max-width: 600px) {
+    .seemorebutton {
+        font-size: 14px;  /* Smaller font size on smaller screens */
+        padding: 8px 16px;  /* Smaller padding on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .seemorebutton {
+        font-size: 12px;  /* Even smaller font size on very small screens */
+        padding: 6px 12px;  /* Even smaller padding on very small screens */
+    }
+}
+
+.seemorebutton:hover {
+    background-color: #9f8a36;
+}
+
+/* Additional hover effect for movie items */
+.movie-item:hover {
+    transform: scale(1.05);
+}
+
+/* Style the filter container */
+.date-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 15px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the date, rating, and genre input fields */
+.date-filter input[type="date"],
+.date-filter input[type="number"],
+.date-filter select,
+.date-filter button {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #f5f5f5;
+    background-color: #222;
+    outline: none;
+    transition: border-color 0.3s ease;
+    max-width: 200px;
+    margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+    .date-filter input[type="date"],
+    .date-filter input[type="number"],
+    .date-filter select,
+    .date-filter button {
+        max-width: 150px;  /* Smaller max width on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .date-filter input[type="date"],
+    .date-filter input[type="number"],
+    .date-filter select,
+    .date-filter button {
+        max-width: 120px;  /* Even smaller max width on very small screens */
+    }
+}
+
+/* Remove margin from the last item in the row */
+.date-filter button {
+    margin-right: 0;
+}
+
+.date-filter input[type="date"]::placeholder,
+.date-filter input[type="number"]::placeholder,
+.date-filter select {
+    color: #888;
+}
+
+.date-filter input[type="date"]:hover,
+.date-filter input[type="number"]:hover,
+.date-filter input[type="date"]:focus,
+.date-filter input[type="number"]:focus,
+.date-filter select:focus {
+    border-color: #ffcc00;
+}
+
+/* Style the genre dropdown */
+.genre-dropdown {
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #222;
+    color: #f5f5f5;
+    border: 1px solid #555;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.genre-dropdown:hover,
+.genre-dropdown:focus {
+    border-color: #ffcc00;
+}
+
+/* Style the filter button */
+.date-filter button {
+    background-color: #ffcc00;
+    color: #222;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.date-filter button:hover {
+    background-color: #ffdd57;
+    transform: scale(1.05);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 800px) {
+    .date-filter {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .date-filter input[type="date"],
+    .date-filter input[type="number"],
+    .date-filter select,
+    .date-filter button {
+        width: 100%;
+        margin-right: 0;
+        max-width: none;
+    }
+}

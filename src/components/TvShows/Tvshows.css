@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+}
+
+
+.movies-container h2 {
+    grid-column: 1 / -1; 
+    font-size: 2.5em;
+    text-align: left;
+    color: #222222;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.movie-item {
+    background-color: #222222;
+    color: #ffe66d;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.movie-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+.movie-item p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+
+.circle-rating {
+    margin: 10px auto;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+
+.progress-circle {
+    width: 90%;
+    height: 90%;
+}
+
+
+.circle-bg {
+    fill: none;
+    stroke: #444;
+    stroke-width: 2.8;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke: #ffcc00;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.5s ease;
+}
+.percentage {
+    fill: #ffe66d;
+    font-size: 0.5em;
+    text-anchor: middle;
+    font-weight: bold;
+    transform: translateY(0.25em);
+}
+ 
+.heart-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.heart-icon.favorite {
+    color: red;
+}

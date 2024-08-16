@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Work+Sans:wght@400&display=swap');
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; 
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #222222, #ffe66d);
+    color: #ffe66d;
+    padding: 15px 30px;
+    margin: 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; 
+}
+
+
+.navbar:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.left-bar {
+    font-family: 'Poppins', sans-serif;  /* Ensures consistency with your heading fonts */  /* Larger font size for prominence */
+    color: #ffe66d;  /* Purple color to match your design */
+    text-align: center;  /* Center the text */
+    margin: 20px;  /* Add some spacing around the section */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Subtle shadow for depth */
+}
+
+.left-bar h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;  /* Slightly tighter spacing between the lines */
+    letter-spacing: 0.1em;  /* Adds space between the letters */
+    text-decoration: underline;
+    text-transform: uppercase;  /* Ensures all letters are uppercase */
+}
+
+.left-bar a {
+    text-decoration: none;  /* Remove underline from the link */
+    color: inherit;  /* Ensure the link inherits the color from the parent */
+    display: inline-block;  /* Allows for padding and other block-level adjustments */
+}
+
+.left-bar a:hover h1 {
+    color: #898d39;  /* Darker purple on hover */
+    transition: color 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+@media screen and (max-width: 768px) {
+    .left-bar {
+        font-size: 2em;  /* Adjust font size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .left-bar {
+        font-size: 1.5em;  /* Further adjust font size for very small screens */
+    }
+}
+
+
+.right-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.right-bar input {
+    padding: 8px;
+    border: 2px solid #ffe66d;
+    border-radius: 5px;
+    background-color: white;
+    color: #222222;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    margin-left: 20px;
+}
+
+.right-bar input:focus {
+    border-color: #ffcc00;
+    outline: none;
+}
+
+.right-bar input::placeholder {
+    color: #999;
+}
+
+.right-bar input:hover {
+    border-color: #ffaa00;
+}
+
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    position: relative;
+    margin-right: 20px;
+}
+
+.nav-item a {
+    color: #222222;
+    font-weight: bolder;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.nav-item a:hover {
+    background-color: #ffe66d;
+    color: #222222;
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    z-index: 9999; 
+    min-width: 160px;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    padding: 5px 20px;
+}
+
+.dropdown-menu li a {
+    color: #333;
+    padding: 10px 0;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.dropdown-toggle::after {
+    content: ' ▼';
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+
+    .right-bar {
+        /* width: 100%; */
+        justify-content: space-between;
+        margin-top: 10px;
+        position: relative;
+  width: fit-content;
+    }
+
+
+    .nav-list {
+        flex-direction: column;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .nav-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .right-bar input {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .leftbar {
+        font-size: 1.2em;
+    }
+
+    .nav-item a {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    .right-bar input {
+        font-size: 0.9em;
+    }
+}
+.search-results {
+  position: absolute;
+  top: 100%; /* Place directly below the input field */
+  left: 0; /* Align to the left of the input */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%; /* Match the width of the input field */
+  z-index: 1000; /* Ensure it appears above other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  margin-top: 5px; /* Adjust this if necessary */
+}
+
+.search-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer; /* Add cursor pointer for better UX */
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.search-results li:hover {
+  background-color: #f5f5f5; /* Slight background change on hover */
+}
+
+/* Style the search input */
+.search-input {
+  width: 300px; /* Adjust this width if needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #999; /* Subtle focus effect */
+}
