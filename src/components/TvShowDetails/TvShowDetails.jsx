@@ -35,7 +35,7 @@ const TvShowDetails = () => {
         // Fetch TV show details (including genres)
         const fetchTvShowDetails = async () => {
             try {
-                const details = await MovieApi.fetchmoviedetails(tvshow.id); // Assuming you have this method
+                const details = await MovieApi.fetchTvdetails(tvshow.id); // Assuming you have this method
                 setGenres(details.genres || []); // Set genres
             } catch (error) {
                 console.error("Error fetching TV show details:", error);

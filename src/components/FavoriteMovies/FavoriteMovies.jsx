@@ -9,7 +9,7 @@ function FavoriteMovies(props) {
     // Load favorites from local storage when the component mounts
     useEffect(() => {
         const storedFavorites = JSON.parse(localStorage.getItem('favoriteMovies')) || {};
-        setFavorites(storedFavorites);
+        setFavorites(storedFavorites)
     }, []);
 
     // Toggle favorite status for a movie
@@ -23,6 +23,7 @@ function FavoriteMovies(props) {
             }
             localStorage.setItem('favoriteMovies', JSON.stringify(newFavorites));
             return newFavorites;
+
         });
     };
 
@@ -33,7 +34,8 @@ function FavoriteMovies(props) {
 
     return (
         <div className="movies-container">
-            <h2>Favorite Movies</h2>
+            {Object.keys(favorites).length>1 && <h2>Favorite Movies</h2>}
+            
             {Object.values(favorites).map((movie) => {
                 console.log("fav:",movie)
                 if (movie.poster_path && movie.title) {

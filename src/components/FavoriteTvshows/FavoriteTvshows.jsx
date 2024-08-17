@@ -32,7 +32,7 @@ function FavoriteTvshows(props) {
 
     return (
         <div className="movies-container">
-            <h2>Favorite TV Shows</h2>
+            {Object.keys(favorites).length!==0 && <h2>Favorite TV Shows</h2>}
             {Object.values(favorites).map((show) => {
                 // Add a check to ensure all necessary TV show properties are present
                 if (show.poster_path && show.name) {
