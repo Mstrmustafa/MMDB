@@ -46,7 +46,6 @@ function Tvshows(props) {
         <div className="movies-container">
             <h2>TV Shows</h2>
             {tvshows.map((show) => {
-                console.log("tvshow",show)
                 const isFavorite = Boolean(favorites[show.id]);  // Check if the TV show is in favorites
                 return (
                     <div key={show.id} className="movie-item">

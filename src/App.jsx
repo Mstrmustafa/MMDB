@@ -8,6 +8,7 @@ import TvShowDetails from './components/TvShowDetails/TvShowDetails';
 import FavoriteMovies from './components/FavoriteMovies/FavoriteMovies';
 import FavoriteTvshows from './components/FavoriteTvshows/FavoriteTvshows';
 import AllMovies from './components/AllMovies/AllMovies';
+import AllTvshows from './components/AllTvshows/AllTvshows';
 const App = ()=>{
     return(
         <BrowserRouter>
@@ -21,6 +22,7 @@ const App = ()=>{
     <Route path="/tvshow-details/:category" element={<TvShowDetails/>} />
     <Route path="/favorite" element={<><FavoriteMovies/><FavoriteTvshows/></>}/>
     <Route path='/AllMovies/' element={<AllMovies/>}/>
+    <Route path='/AllTvshows' element={<AllTvshows/>}/>
 
 </Routes>
         </main>

@@ -42,7 +42,7 @@ function Navbar(props) {
       <section className="right-bar">
         <ul className="nav-list">
           <li className="nav-item">
-            <a>Tv shows</a>
+           <Link to={"/AllTvshows"}>Tv shows</Link>
           </li>
           <li className="nav-item">
             <Link to={"/favorite"}>Favorite</Link>
@@ -84,7 +84,7 @@ function Navbar(props) {
           <div className="search-results">
             <ul>
               {data.map((item) => (
-                <li key={item.id} onClick={()=>savemovie(item)}>
+                <li key={item.id} onClick={()=>{savemovie(item);setSearch("")}}>
                   <Link to={`/movie-details/${item.id}`}>
                     {item.name || item.title} {/* Display name or title */}
                   </Link>

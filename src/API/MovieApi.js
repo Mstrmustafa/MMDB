@@ -20,6 +20,20 @@ const fetchAllMovies = async (page = 1) => {
     }
 };
 /////////////////////////////////////////////////////////////////////////////////////
+const fetchAllTvshows = async (page = 1) => {
+    try {
+        const res = await fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&page=${page}`);
+        if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const json = await res.json();
+        return json.results || [];
+    } catch (error) {
+        console.error("Error fetching movies:", error);
+        return [];
+    }
+};
+/////////////////////////////////////////////////////////////////////////////////////
 const fetchMoviesByDateAndRating = async (startDate, endDate, minRating, maxRating, genreId, page = 1) => {
   try {
     let url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&primary_release_date.gte=${startDate}&primary_release_date.lte=${endDate}&page=${page}`;
@@ -42,6 +56,33 @@ const fetchMoviesByDateAndRating = async (startDate, endDate, minRating, maxRati
     return json.results || [];
   } catch (error) {
     console.error("Error fetching movies by date, rating, and genre:", error);
+    return [];
+  }
+};
+
+/////////////////////////////////////////////////////////////////////////////////////
+const fetchTvshosByDateAndRating = async (startDate, endDate, minRating, maxRating, genreId, page = 1) => {
+  try {
+    let url = `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&first_air_date.gte=${startDate}&first_air_date.lte=${endDate}&page=${page}`;
+    
+    if (minRating) {
+      url += `&vote_average.gte=${minRating}`;
+    }
+    if (maxRating) {
+      url += `&vote_average.lte=${maxRating}`;
+    }
+    if (genreId) {
+      url += `&with_genres=${genreId}`;
+    }
+
+    const res = await fetch(url);
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    const json = await res.json();
+    return json.results || [];
+  } catch (error) {
+    console.error("Error fetching TV shows by date, rating, and genre:", error);
     return [];
   }
 };
@@ -171,6 +212,8 @@ export default{
     fetchAllMovies,
     fetchMoviesByDateAndRating,
     API_KEY,
-    fetchsearch
+    fetchsearch,
+    fetchTvshosByDateAndRating,
+    fetchAllTvshows
 
 }

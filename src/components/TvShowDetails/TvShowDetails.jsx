@@ -15,7 +15,10 @@ const TvShowDetails = () => {
         // Set the link based on the category
         if (category === "fav") {
             setLink("/favorite");
-        } else {
+        } else if(category==="All"){
+            setLink("/AllTvshows");
+        }
+        else {
             setLink("/");
         }
 
