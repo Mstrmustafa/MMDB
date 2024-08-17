@@ -25,7 +25,7 @@ const TvShowDetails = () => {
         // Fetch the TV show cast
         const fetchTvShowCast = async () => {
             try {
-                const casting = await MovieApi.movieCast(tvshow.id); // Assuming you have this method
+                const casting = await MovieApi.TvCast(tvshow.id); // Assuming you have this method
                 setCast(casting.cast || []);
             } catch (error) {
                 console.error("Error fetching TV show cast:", error);
@@ -44,7 +44,7 @@ const TvShowDetails = () => {
 
         fetchTvShowCast();
         fetchTvShowDetails();
-    }, [tvshow, category]);
+    }, [category]);
 
     // Handle "Show More" click for cast
     const handleShowMore = () => {

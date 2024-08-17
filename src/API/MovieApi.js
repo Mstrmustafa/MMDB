@@ -197,6 +197,28 @@ const movieCast = async (id) => {
   }
 };
 ////////////////////////////////////////////////////////////////////////////////////////
+const TvCast = async (id) => {
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NmYwMDA1YWZjOTBmYTk2MTQyYzgxMDc4MjU3YmVjOCIsIm5iZiI6MTcyMzI4MzU4NC44OTg0NzgsInN1YiI6IjY2YjczMzI4NmNjOWVlN2RjMDllZGM4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ULU8yJL3ZtJnqk_SOV5FleIRjVv_gheQjjGm_BxQN_M'
+    }
+  };
+
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/tv/${id}/credits?language=en-US`, options);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data; 
+  } catch (error) {
+    console.error('Error fetching movie cast:', error);
+    return null; 
+  }
+};
+////////////////////////////////////////////////////////////////////////////////////////
 const fetchsearch = async (value) => {
   const options = {
     method: 'GET',
@@ -234,6 +256,6 @@ export default{
     fetchsearch,
     fetchTvshosByDateAndRating,
     fetchAllTvshows,
-    fetchTvdetails
-
+    fetchTvdetails,
+    TvCast
 }
