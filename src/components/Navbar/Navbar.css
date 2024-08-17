@@ -179,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 942px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -282,4 +282,149 @@ h1, h2, h3, h4, h5, h6 {
 
 .search-input:focus {
   border-color: #999; /* Subtle focus effect */
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.left-bar h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.right-bar {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  align-items: center;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
+
+.nav-item a {
+  color: #222222;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* .search-input {
+  margin-left: 20px;
+  padding: 5px;
+  font-size: 16px;
+} */
+/* 
+.search-results {
+  position: absolute;
+  top: 50px;
+  background-color: #eee;
+  color: #222222;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+} */
+
+/* .search-results ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+} */
+
+/* .search-results li {
+  padding: 10px;
+} */
+
+.search-results li:hover {
+  background-color: #eee;
+}@media (max-width: 942px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #eee;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100%; /* Ensure the toggle button takes the full width */
+    text-align: center; /* Center text inside the button */
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #eee;
+    padding: 20px;
+    width: 200px;
+    z-index: 1000;
+    align-items: center; /* Center items within the dropdown */
+  }
+
+  .nav-list.open {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally and vertically */
+  }
+
+  .nav-item {
+    width: 100%; /* Ensure the nav items take the full width */
+    text-align: center; /* Center text inside the nav items */
+    display: flex;
+    justify-content: center; /* Center the nav items horizontally */
+    align-items: center; /* Center the nav items vertically */
+  }
+
+  .nav-item a {
+    width: 100%; /* Ensure links take the full width */
+    text-align: center; /* Center text inside the links */
+  }
+
+  .search-input {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%; /* Ensure the input field takes the full width */
+    text-align: center; /* Center text inside the input field */
+  }
 }

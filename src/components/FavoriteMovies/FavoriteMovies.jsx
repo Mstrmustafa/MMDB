@@ -34,7 +34,7 @@ function FavoriteMovies(props) {
 
     return (
         <div className="movies-container">
-            {Object.keys(favorites).length!==0 && <h2>Favorite Movies</h2>}
+            {Object.keys(favorites).length>1 && <h2>Favorite Movies</h2>}
             
             {Object.values(favorites).map((movie) => {
                 console.log("fav:",movie)

@@ -5,29 +5,29 @@ import MovieApi from "../../API/MovieApi";
 
 function Navbar(props) {
   const [search, setSearch] = useState("");
-  const [data, setData] = useState([]); 
+  const [data, setData] = useState([]);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const savemovie = (movie) => {
-        localStorage.setItem('movie', JSON.stringify(movie));
-    };
- 
+    localStorage.setItem("movie", JSON.stringify(movie));
+  };
+
   const fetchSearch = async () => {
     if (search.trim() !== "") {
       try {
-        const results = await MovieApi.fetchsearch(search); 
-        setData(results || []); 
-        // console.log("data", results); 
-        
+        const results = await MovieApi.fetchsearch(search);
+        setData(results || []);
       } catch (error) {
         console.error("Error fetching search results:", error);
-        setData([]);  
+        setData([]);
       }
     } else {
-      setData([]);  
+      setData([]);
     }
   };
 
   useEffect(() => {
-    fetchSearch(); 
+    fetchSearch();
   }, [search]);
 
   return (
@@ -40,43 +40,45 @@ function Navbar(props) {
         </Link>
       </section>
       <section className="right-bar">
-        <ul className="nav-list">
+        <button
+          className="menu-toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          ☰
+        </button>
+        <ul className={`nav-list ${isMobileMenuOpen ? "open" : ""}`}>
           <li className="nav-item">
-           <Link to={"/AllTvshows"}>Tv shows</Link>
+            <Link to={"/AllTvshows"}>Tv shows</Link>
           </li>
           <li className="nav-item">
             <Link to={"/favorite"}>Favorite</Link>
           </li>
-
           <li className="nav-item dropdown">
-            <Link to={'/AllMovies'}><p className="dropdown-toggle">
-             All Movies
-            </p></Link>
+            <Link to={"/AllMovies"}>
+              <p className="dropdown-toggle">All Movies</p>
+            </Link>
             <ul className="dropdown-menu">
               <li>
                 <Link to="/movies/popular">Popular</Link>
               </li>
               <li>
                 <Link to="/movies/now_playing">Now Playing</Link>
-
               </li>
               <li>
                 <Link to="/movies/upcoming">Upcoming</Link>
-
               </li>
               <li>
                 <Link to="/movies/top_rated">Top Rated</Link>
-
               </li>
             </ul>
           </li>
         </ul>
-        <input 
-          type="text" 
-          placeholder="Search..." 
-          className="search-input" 
-          value={search} 
-          name="search" 
+        <input
+          type="text"
+          placeholder="Search..."
+          className="search-input"
+          value={search}
+          name="search"
           onChange={(e) => setSearch(e.target.value)}
         />
         {/* Display search results */}
@@ -84,7 +86,13 @@ function Navbar(props) {
           <div className="search-results">
             <ul>
               {data.map((item) => (
-                <li key={item.id} onClick={()=>{savemovie(item);setSearch("")}}>
+                <li
+                  key={item.id}
+                  onClick={() => {
+                    savemovie(item);
+                    setSearch("");
+                  }}
+                >
                   <Link to={`/movie-details/${item.id}`}>
                     {item.name || item.title} {/* Display name or title */}
                   </Link>

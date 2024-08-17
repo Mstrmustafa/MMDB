@@ -242,6 +242,8 @@
     justify-content: space-between;
     margin-bottom: 20px;
     gap: 15px;
+    max-width: 100%;
+    min-width: 30%;
     padding: 10px;
     background-color: #333;
     border-radius: 10px;
@@ -271,7 +273,7 @@
     .date-filter input[type="number"],
     .date-filter select,
     .date-filter button {
-        max-width: 150px;  /* Smaller max width on smaller screens */
+        max-width: 100px;  /* Smaller max width on smaller screens */
     }
 }
 
@@ -280,7 +282,7 @@
     .date-filter input[type="number"],
     .date-filter select,
     .date-filter button {
-        max-width: 120px;  /* Even smaller max width on very small screens */
+        max-width: 90px;  /* Even smaller max width on very small screens */
     }
 }
 
@@ -349,7 +351,7 @@
     .date-filter input[type="number"],
     .date-filter select,
     .date-filter button {
-        width: 100%;
+        width: 95%;
         margin-right: 0;
         max-width: none;
     }
