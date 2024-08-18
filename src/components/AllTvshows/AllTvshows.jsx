@@ -145,10 +145,10 @@ const AllTvshows = () => {
                 </select>
 
                 <button onClick={() => {
-                    setTvshows([]); // Clear current TV shows
-                    setPage(1);    // Reset page
-                    setHasMore(true); // Reset hasMore
-                    applyFilters(); // Apply filters
+                    setTvshows([]); 
+                    setPage(1);    
+                    setHasMore(true); 
+                    applyFilters(); 
                 }}>
                     Filter by Date, Rating & Genre
                 </button>

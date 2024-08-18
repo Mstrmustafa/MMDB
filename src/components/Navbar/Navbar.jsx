@@ -93,7 +93,7 @@ function Navbar(props) {
                     setSearch("");
                   }}
                 >
-                  <Link to={`/movie-details/${item.id}`}>
+                  <Link to={`/movie-details`}>
                     {item.name || item.title} {/* Display name or title */}
                   </Link>
                 </li>

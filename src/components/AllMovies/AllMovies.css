@@ -17,13 +17,13 @@
 
 @media (max-width: 800px) {
     .moviescontainer h2 {
-        font-size: 30px;  /* Smaller heading on medium screens */
+        font-size: 30px;  
     }
 }
 
 @media (max-width: 500px) {
     .moviescontainer h2 {
-        font-size: 24px;  /* Even smaller heading on small screens */
+        font-size: 24px;  
     }
 }
 
@@ -38,14 +38,14 @@
 
 @media (max-width: 600px) {
     .movieslist {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));  /* Smaller items on smaller screens */
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));  
         gap: 15px;
     }
 }
 
 @media (max-width: 400px) {
     .movieslist {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));  /* Even smaller items on very small screens */
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));  
         gap: 10px;
     }
 }
@@ -63,13 +63,13 @@
 
 @media (max-width: 600px) {
     .movie-item {
-        padding: 8px;  /* Smaller padding on smaller screens */
+        padding: 8px;  
     }
 }
 
 @media (max-width: 400px) {
     .movie-item {
-        padding: 6px;  /* Even smaller padding on very small screens */
+        padding: 6px;  
     }
 }
 
@@ -82,13 +82,13 @@
 
 @media (max-width: 600px) {
     .movie-item img {
-        margin-bottom: 8px;  /* Smaller margin on smaller screens */
+        margin-bottom: 8px; 
     }
 }
 
 @media (max-width: 400px) {
     .movie-item img {
-        margin-bottom: 6px;  /* Even smaller margin on very small screens */
+        margin-bottom: 6px;  
     }
 }
 
@@ -102,13 +102,13 @@
 
 @media (max-width: 600px) {
     .movie-item p:first-of-type {
-        font-size: 14px;  /* Smaller font size on smaller screens */
+        font-size: 14px; 
     }
 }
 
 @media (max-width: 400px) {
     .movie-item p:first-of-type {
-        font-size: 12px;  /* Even smaller font size on very small screens */
+        font-size: 12px; 
     }
 }
 
@@ -120,13 +120,13 @@
 
 @media (max-width: 600px) {
     .movie-item p:nth-of-type(2) {
-        font-size: 12px;  /* Smaller font size on smaller screens */
+        font-size: 12px;  
     }
 }
 
 @media (max-width: 400px) {
     .movie-item p:nth-of-type(2) {
-        font-size: 10px;  /* Even smaller font size on very small screens */
+        font-size: 10px;  
     }
 }
 
@@ -141,14 +141,14 @@
 @media (max-width: 600px) {
     .circlerating {
         width: 60px;
-        height: 60px;  /* Smaller rating circle on smaller screens */
+        height: 60px;  
     }
 }
 
 @media (max-width: 400px) {
     .circlerating {
         width: 50px;
-        height: 50px;  /* Even smaller rating circle on very small screens */
+        height: 50px;  
     }
 }
 
@@ -187,13 +187,13 @@
 
 @media (max-width: 600px) {
     .hearticon {
-        font-size: 20px;  /* Smaller icon on smaller screens */
+        font-size: 20px;  
     }
 }
 
 @media (max-width: 400px) {
     .hearticon {
-        font-size: 16px;  /* Even smaller icon on very small screens */
+        font-size: 16px;  
     }
 }
 
@@ -213,15 +213,15 @@
 
 @media (max-width: 600px) {
     .seemorebutton {
-        font-size: 14px;  /* Smaller font size on smaller screens */
-        padding: 8px 16px;  /* Smaller padding on smaller screens */
+        font-size: 14px; 
+        padding: 8px 16px;  
     }
 }
 
 @media (max-width: 400px) {
     .seemorebutton {
-        font-size: 12px;  /* Even smaller font size on very small screens */
-        padding: 6px 12px;  /* Even smaller padding on very small screens */
+        font-size: 12px;  
+        padding: 6px 12px;  
     }
 }
 
@@ -273,7 +273,7 @@
     .date-filter input[type="number"],
     .date-filter select,
     .date-filter button {
-        max-width: 100px;  /* Smaller max width on smaller screens */
+        max-width: 100px;  
     }
 }
 
@@ -282,7 +282,7 @@
     .date-filter input[type="number"],
     .date-filter select,
     .date-filter button {
-        max-width: 90px;  /* Even smaller max width on very small screens */
+        max-width: 90px; 
     }
 }
 
