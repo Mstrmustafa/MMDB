@@ -18,10 +18,10 @@ const App = ()=>{
         <Routes>
     <Route path="/" element={<><Movies/><Tvshows/></>} />
     <Route path="/movies/:category" element={<Movies/>} />
-    <Route path="/movie-details/:category" element={<MovieDetails/>} />
+    <Route path="/movie-details" element={<MovieDetails/>} />
     <Route path="/tvshow-details/:category" element={<TvShowDetails/>} />
     <Route path="/favorite" element={<><FavoriteMovies/><FavoriteTvshows/></>}/>
-    <Route path='/AllMovies/' element={<AllMovies/>}/>
+    <Route path='/AllMovies' element={<AllMovies/>}/>
     <Route path='/AllTvshows' element={<AllTvshows/>}/>
 
 </Routes>

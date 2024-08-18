@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 // import './Movies.css';
 import MovieApi from "../../API/MovieApi";
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 function Movies(props) {
     const [favorites, setFavorites] = useState({});
     const [movies, setMovies] = useState([]);
-    const location = useLocation();
     const { category } = useParams() || "default";
 
     useEffect(() => {
@@ -63,7 +62,7 @@ function Movies(props) {
                 const isFavorite = Boolean(favorites[movie.id]);  // Check if the movie is in favorites
                 return (
                     <div key={movie.id} className="movie-item">
-                        <Link to={`/movie-details/${category}`}>
+                        <Link to={`/movie-details`}>
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                 alt={movie.title || 'Movie Poster'} 

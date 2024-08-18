@@ -1,38 +1,16 @@
 import React, { useState, useEffect } from "react";
 // import '../Movies/Movies.css';
 import MovieApi from "../../API/MovieApi";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const MovieDetails = () => {
     const [trailer, setTrailer] = useState(false);
     const movie = JSON.parse(localStorage.getItem('movie'));
     const [youtubeLink, setYoutubeLink] = useState("");
-    const { category } = useParams() || "default";
-    const [link, setLink] = useState("");
     const [genres, setGenres] = useState([]);
     const [cast, setCast] = useState([]);
     const [visibleCastCount, setVisibleCastCount] = useState(7); // State to manage visible cast count
-
-    useEffect(() => {
-        // Set the link based on the category
-        if (category === "popular") {
-            setLink("/movies/popular");
-        } else if (category === "fav") {
-            setLink("/favorite");
-        } else if (category === "now_playing") {
-            setLink("/movies/now_playing");
-        } else if (category === "upcoming") {
-            setLink("/movies/upcoming");
-        } else if (category === "top_rated") {
-            setLink("/movies/top_rated");
-        }else if(category === "All"){
-            setLink("/AllMovies");
-        } 
-        else {
-            setLink("/");
-        }
-
-    }, [movie, category]);
+    const navigate = useNavigate();
     
    useEffect(()=>{
     const fetchMovieTrailer = async () => {
@@ -76,7 +54,9 @@ const MovieDetails = () => {
     const handleShowMore = () => {
         setVisibleCastCount(prevCount => prevCount + 7);
     };
-    
+    const go_back = ()=>{
+            navigate(-1)
+    }
     return (
         <div className="details-container">
             <div className="details-image">
@@ -139,9 +119,7 @@ const MovieDetails = () => {
                     <button onClick={() => setTrailer(!trailer)}>Finish</button>
                 </div>
             )}
-            <Link to={link}>
-                <button className="close-button">×</button>
-            </Link>
+                <button className="close-button" onClick={go_back}>×</button>
         </div>
     );
 };

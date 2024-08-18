@@ -161,7 +161,7 @@ const AllMovies = () => {
                     const isFavorite = Boolean(favorites[movie.id]);
                     return (
                         <div key={movie.id} className="movie-item">
-                            <Link to={`/movie-details/All`}>
+                            <Link to={`/movie-details`}>
                                 <img 
                                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
                                     alt={movie.title || 'Movie Poster'} 
