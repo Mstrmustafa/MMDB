@@ -1,26 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import '../Movies/Movies.css'; // Ensure this CSS file contains the necessary styles
 import MovieApi from "../../API/MovieApi"; // Assuming you have a method for fetching TV show cast and details
 
 const TvShowDetails = () => {
     const tvshow = JSON.parse(localStorage.getItem('tvshow'));
-    const { category } = useParams() || "default";
-    const [link, setLink] = useState("");
     const [cast, setCast] = useState([]);
     const [genres, setGenres] = useState([]);
     const [visibleCastCount, setVisibleCastCount] = useState(7); // State to manage visible cast count
-
+    const navigate = useNavigate();
     useEffect(() => {
-        // Set the link based on the category
-        if (category === "fav") {
-            setLink("/favorite");
-        } else if(category==="All"){
-            setLink("/AllTvshows");
-        }
-        else {
-            setLink("/");
-        }
 
         // Fetch the TV show cast
         const fetchTvShowCast = async () => {
@@ -44,13 +33,15 @@ const TvShowDetails = () => {
 
         fetchTvShowCast();
         fetchTvShowDetails();
-    }, [category]);
+    }, []);
 
     // Handle "Show More" click for cast
     const handleShowMore = () => {
         setVisibleCastCount((prevCount) => prevCount + 7);
     };
-
+    const go_back = ()=>{
+        navigate(-1)
+    }
     return (
         <div className="details-container">
             <div className="details-image">
@@ -100,10 +91,8 @@ const TvShowDetails = () => {
                     </button>
                 )}
             </div>
-
-            <Link to={link}>
-                <button className="close-button">×</button>
-            </Link>
+                <button className="close-button" onClick={go_back}>×</button>
+            
         </div>
     );
 };

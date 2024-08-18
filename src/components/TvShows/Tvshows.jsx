@@ -49,7 +49,7 @@ function Tvshows(props) {
                 const isFavorite = Boolean(favorites[show.id]);  // Check if the TV show is in favorites
                 return (
                     <div key={show.id} className="movie-item">
-                        <Link to="/tvshow-details/default">
+                        <Link to="/tvshow-details">
                             <img 
                                 src={`https://image.tmdb.org/t/p/w500/${show.poster_path}`} 
                                 alt={show.name || 'TV Show Poster'} 

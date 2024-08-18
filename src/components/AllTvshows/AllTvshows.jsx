@@ -159,7 +159,7 @@ const AllTvshows = () => {
                     const isFavorite = Boolean(favorites[show.id]);
                     return (
                         <div key={show.id} className="movie-item">
-                            <Link to={`/tvshow-details/All`}>
+                            <Link to={`/tvshow-details`}>
                                 <img 
                                     src={`https://image.tmdb.org/t/p/w500/${show.poster_path}`} 
                                     alt={show.name || 'TV Show Poster'} 
